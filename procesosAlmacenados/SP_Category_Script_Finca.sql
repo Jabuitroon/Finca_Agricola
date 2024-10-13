@@ -8,8 +8,11 @@ end//
 DELIMITER ;
 -- Actualizar
 DELIMITER //
-create procedure procUpdateCategory(IN v_id INT ,IN v_descripcion VARCHAR(100))
+create procedure procUpdateCategory(IN v_id INT ,IN v_nombre VARCHAR(45), IN v_descripcion VARCHAR(100))
 begin
+	 update tbl_categoria
+     set cat_nombre = v_nombre
+     where cat_id = v_id;
      update tbl_categoria
      set cat_descripcion = v_descripcion
      where cat_id = v_id;
